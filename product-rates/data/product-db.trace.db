@@ -1,0 +1,10 @@
+2023-03-10 17:29:39 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM PRODUCT 
+
+CREATE TABLE[*] PRODUCT(PRODUCT_ID INT PRIMARY KEY AUTO_INCREMENT, PRODUCT_NAME VARCHAR(30))"; SQL statement:
+SELECT * FROM PRODUCT 
+
+create table product(product_id int primary key auto_increment, product_name varchar(30)) [42000-200]
+2023-03-10 17:29:56 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PRODUCT" already exists; SQL statement:
+create table product(product_id int primary key auto_increment, product_name varchar(30)) [42101-200]
