@@ -43,8 +43,10 @@ public class ProductService {
         Product product = new Product();
         ResponseEntity<Product> responseEntity = null;
         try {
-            String httpUrl = "http://localhost:8081/v1/pricing/" + productId;
+            String httpUrl = "http://inventory-pricing:8081/v1/pricing/" + productId;
             System.out.println("Http URl - "+httpUrl);
+            //hht[headers]
+
             responseEntity = restTemplate.getForEntity(httpUrl, Product.class);
 
             if (responseEntity.getStatusCode().equals(HttpStatus.OK)) {
