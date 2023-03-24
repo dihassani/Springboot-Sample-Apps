@@ -1,7 +1,6 @@
 package com.deloitte.inventorypricing.service;
 
 import com.deloitte.inventorypricing.model.Product;
-import com.deloitte.inventorypricing.model.request.PricingRequest;
 import com.deloitte.inventorypricing.repository.ProductRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,10 +41,12 @@ public class PricingService {
     }
 
     public void deleteProduct(int id) {
+        log.info("Pricing Service ::: Delete Product request for product id {}", id);
         this.productRepository.deleteById(id);
     }
 
     public void deleteAllProducts() {
+        log.info("Pricing Service ::: Delete all Products request");
         this.productRepository.deleteAll();
     }
 }

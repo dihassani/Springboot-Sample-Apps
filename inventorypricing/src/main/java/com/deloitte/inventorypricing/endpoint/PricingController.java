@@ -1,7 +1,6 @@
 package com.deloitte.inventorypricing.endpoint;
 
 import com.deloitte.inventorypricing.model.Product;
-import com.deloitte.inventorypricing.model.request.PricingRequest;
 import com.deloitte.inventorypricing.service.PricingService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,10 +23,6 @@ public class PricingController {
     @ResponseBody
     public ResponseEntity getProductPrice(@PathVariable("id") int productId) {
         log.info("Pricing Controller ::: Received Product Pricing Request - {}", productId);
-        /*if(pricingRequest.getProductId()){
-            return new ResponseEntity<>("Product ID cannot be null/empty", HttpStatus.BAD_REQUEST);
-        }
-*/
         try{
             Product response = this.pricingService.retrievePriceById(productId);
             if(response != null){
@@ -44,7 +39,6 @@ public class PricingController {
     @ResponseBody
     public ResponseEntity getAllProductPrices() {
         log.info("Pricing Controller ::: Received Request to retrieve all Products");
-
         try{
             List<Product> products = this.pricingService.retrieveAllProducts();
             if(products != null){
@@ -61,9 +55,9 @@ public class PricingController {
     @ResponseBody
     public HttpStatus addProductPricing(@RequestBody Product addProductRequest){
         log.info("Pricing Controller ::: Received Product to Add - {}", addProductRequest);
-        /*if(addProductRequest.getProductId()==null || addProductRequest.getProductId().isEmpty()){
+        if(addProductRequest.getProductId() == null){
             return HttpStatus.BAD_REQUEST;
-        }*/
+        }
 
         try{
             Product response = this.pricingService.addProduct(addProductRequest);
