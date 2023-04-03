@@ -71,7 +71,11 @@
 			<artifactId>spring-web</artifactId>
 			<version>5.2.12.RELEASE</version>
 		</dependency>
-
+<!--		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-azure-spring-cloud-client</artifactId>
+			<version>2.4.0</version>
+		</dependency>-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-dependencies</artifactId>
@@ -80,6 +84,7 @@
 			<scope>import</scope>
 		</dependency>
 	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -98,6 +103,11 @@
 		</plugins>
 	</build>
 	<repositories>
+		<repository>
+			<id>spring-cloud-starter-azure-spring-cloud-client</id>
+			<name>Spring Cloud Config Azure Repository</name>
+			<url>https://repo1.maven.org/maven2/com/microsoft/azure/spring-cloud-starter-azure-spring-cloud-client/2.4.0/</url>
+		</repository>
 		<repository>
 			<id>spring-milestones</id>
 			<name>Spring Milestones</name>
