@@ -2,19 +2,17 @@ package com.demo.productrates.service;
 
 import com.demo.productrates.model.Product;
 import com.demo.productrates.repository.ProductRepository;
-import com.demo.productrates.service.client.model.PricingRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Arrays;
 import java.util.List;
 
 @Service
+@ConfigurationProperties(prefix = "inventory.pricing.http")
 public class ProductService {
 
     @Autowired
@@ -23,8 +21,7 @@ public class ProductService {
     @Autowired
     RestTemplate restTemplate;
 
-    @Value("${inventory.pricing.http.url}")
-    private String inventoryPricingUrl;
+    private String url;
 
     public void saveProductDetails(Product product) {
         productRepository.save(product);
@@ -47,7 +44,7 @@ public class ProductService {
         Product product = new Product();
         ResponseEntity<Product> responseEntity = null;
         try {
-            String httpUrl = inventoryPricingUrl + productId;
+            String httpUrl = url + productId;
             System.out.println("Http URl - "+httpUrl);
             //hht[headers]
 
