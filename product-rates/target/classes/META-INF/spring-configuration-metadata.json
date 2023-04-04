@@ -1,16 +1,16 @@
 {
   "groups": [
     {
-      "name": "inventory.pricing.http",
-      "type": "com.demo.productrates.service.ProductService",
-      "sourceType": "com.demo.productrates.service.ProductService"
+      "name": "feature-flag",
+      "type": "com.demo.productrates.service.Message",
+      "sourceType": "com.demo.productrates.service.Message"
     }
   ],
   "properties": [
     {
-      "name": "inventory.pricing.http.product-details",
-      "type": "java.util.List<com.demo.productrates.model.Product>",
-      "sourceType": "com.demo.productrates.service.ProductService"
+      "name": "feature-flag.message",
+      "type": "java.lang.String",
+      "sourceType": "com.demo.productrates.service.Message"
     }
   ],
   "hints": []

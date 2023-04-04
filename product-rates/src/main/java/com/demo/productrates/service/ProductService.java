@@ -12,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.List;
 
 @Service
-@ConfigurationProperties(prefix = "inventory.pricing.http")
+//@ConfigurationProperties(prefix = "inventory.pricing.http")
 public class ProductService {
 
     @Autowired
@@ -21,6 +21,7 @@ public class ProductService {
     @Autowired
     RestTemplate restTemplate;
 
+    @Value("${inventory.pricing.http.url}")
     private String url;
 
     public void saveProductDetails(Product product) {

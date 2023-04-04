@@ -1,6 +1,8 @@
 com\demo\productrates\controller\ProductController.class
 com\demo\productrates\ProductRateMgmtApplication.class
 com\demo\productrates\model\Product.class
+com\demo\productrates\service\Message.class
 com\demo\productrates\service\client\model\PricingRequest.class
 com\demo\productrates\service\ProductService.class
+META-INF\spring-configuration-metadata.json
 com\demo\productrates\repository\ProductRepository.class
